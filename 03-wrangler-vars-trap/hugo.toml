@@ -1,0 +1,9 @@
+baseURL = "/"
+languageCode = "zh-CN"
+title = "方案 03：【误区验证】在 wrangler.jsonc vars 中配置 HUGO_VERSION"
+disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
+
+[params]
+  caseId = "Case 03 · wrangler.jsonc vars Trap (Anti-pattern)"
+  description = "验证为什么在 wrangler.jsonc 的 vars 中声明 HUGO_VERSION 无法改变构建时的 Hugo 版本（常见踩坑点）。"
+  expectedBehavior = "wrangler.jsonc 中的 vars.HUGO_VERSION (0.148.2) 不会生效！实际构建仍会回退到 Cloudflare 默认预装的 Hugo 版本。"

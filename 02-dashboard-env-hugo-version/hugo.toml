@@ -1,0 +1,9 @@
+baseURL = "/"
+languageCode = "zh-CN"
+title = "方案 02：CF 后台环境变量 HUGO_VERSION"
+disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
+
+[params]
+  caseId = "Case 02 · Dashboard Build Variable (HUGO_VERSION)"
+  description = "在 Cloudflare Dashboard 的 Workers Builds -> Build variables 中配置 HUGO_VERSION，测试云端构建容器按需切换 Hugo 版本。"
+  expectedBehavior = "Hugo 版本应与 Cloudflare 后台 Build variables 中设置的 HUGO_VERSION 一致（注意：不要加 v 前缀，如填 0.148.2）"

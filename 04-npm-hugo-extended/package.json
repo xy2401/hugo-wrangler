@@ -1,0 +1,10 @@
+{
+  "name": "hugo-workers-04-npm-pkg",
+  "private": true,
+  "scripts": {
+    "build": "hugo --gc --minify"
+  },
+  "devDependencies": {
+    "hugo-extended": "0.148.2"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  // 方案 04：调用 npm run build，此时使用的是 node_modules/.bin/hugo（由 package.json 锁定版本）
+  "name": "hugo-workers-04-npm-pkg",
+  "compatibility_date": "2026-10-01",
+  "build": {
+    "command": "npm run build"
+  },
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  }
+}

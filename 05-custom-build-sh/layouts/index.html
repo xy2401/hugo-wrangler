@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Site.Title }}</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #f97316;
+      --success: #22c55e;
+      --warn: #eab308;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 2rem 1rem;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--accent);
+      border: 1px solid rgba(249, 115, 22, 0.4);
+      margin-bottom: 0.75rem;
+    }
+    h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.85rem;
+    }
+    p.desc {
+      color: var(--muted);
+      margin-top: 0;
+      margin-bottom: 1.75rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.15rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.75rem;
+      margin-bottom: 1rem;
+      color: #e2e8f0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.65rem 0.5rem;
+      border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+      font-size: 0.95rem;
+    }
+    th {
+      color: var(--muted);
+      font-weight: 500;
+      width: 42%;
+    }
+    td {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      color: #38bdf8;
+      word-break: break-all;
+    }
+    .pill-true {
+      color: var(--success);
+      font-weight: bold;
+    }
+    .pill-false {
+      color: var(--warn);
+      font-weight: bold;
+    }
+    pre {
+      background: #090d16;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+      font-size: 0.85rem;
+      border: 1px solid var(--border);
+      color: #cbd5e1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <span class="badge">{{ .Site.Params.caseId }}</span>
+    <h1>{{ .Site.Title }}</h1>
+    <p class="desc">{{ .Site.Params.description }}</p>
+
+    <div class="card">
+      <h2>🔍 Hugo 构建时环境实测数据 (Build-Time Info)</h2>
+      <table>
+        <tbody>
+          <tr>
+            <th>Hugo 版本 (<code>hugo.Version</code>)</th>
+            <td><strong>{{ hugo.Version }}</strong></td>
+          </tr>
+          <tr>
+            <th>是否为 Extended (<code>hugo.IsExtended</code>)</th>
+            <td>
+              {{ if hugo.IsExtended }}
+                <span class="pill-true">true (支持 SCSS/Sass)</span>
+              {{ else }}
+                <span class="pill-false">false (标准版)</span>
+              {{ end }}
+            </td>
+          </tr>
+          <tr>
+            <th>Go 编译版本 (<code>hugo.GoVersion</code>)</th>
+            <td>{{ hugo.GoVersion }}</td>
+          </tr>
+          <tr>
+            <th>构建环境 (<code>hugo.Environment</code>)</th>
+            <td>{{ hugo.Environment }}</td>
+          </tr>
+          <tr>
+            <th>Commit Hash (<code>hugo.CommitHash</code>)</th>
+            <td>{{ or hugo.CommitHash "N/A" }}</td>
+          </tr>
+          <tr>
+            <th>构建时间 (UTC)</th>
+            <td>{{ now.UTC.Format "2006-01-02 15:04:05 UTC" }}</td>
+          </tr>
+          <tr>
+            <th>配置的期望说明</th>
+            <td>{{ .Site.Params.expectedBehavior }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>📝 方案说明与配置要点</h2>
+      <div>
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+</body>
+</html>

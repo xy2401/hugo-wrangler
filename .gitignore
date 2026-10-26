@@ -1,0 +1,14 @@
+# Ignore Hugo build outputs
+**/public/
+**/resources/_gen/
+**/.hugo_build.lock
+
+# Ignore Node / Wrangler artifacts
+**/node_modules/
+**/.wrangler/
+**/.dev.vars
+
+# Ignore custom downloaded tools in build scripts
+**/.bin/
+**/hugo_*.deb
+**/hugo_*.tar.gz

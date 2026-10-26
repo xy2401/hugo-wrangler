@@ -1,0 +1,16 @@
+{
+  // 方案 03（误区验证）：很多从 Pages 转过来的用户会尝试在 wrangler.jsonc 的 vars 中写 HUGO_VERSION
+  // 注意：vars 是 Worker 运行时（Runtime）环境变量，不是构建容器（Build Image）环境变量！
+  "name": "hugo-workers-03-vars-trap",
+  "compatibility_date": "2026-10-01",
+  "vars": {
+    "HUGO_VERSION": "0.148.2"
+  },
+  "build": {
+    "command": "hugo --gc --minify"
+  },
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  }
+}

@@ -1,0 +1,9 @@
+baseURL = "/"
+languageCode = "zh-CN"
+title = "方案 05：通过自定义 build.sh 脚本精准控制构建环境"
+disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
+
+[params]
+  caseId = "Case 05 · Custom build.sh Script (Official Hugo Guide)"
+  description = "参考 Hugo 官方 Host on Cloudflare 指南，通过自定义 build.sh 直接从官方 GitHub Releases 下载指定版本的 Hugo Extended 二进制文件并执行构建。"
+  expectedBehavior = "Hugo 版本严格等于 build.sh 中定义的 DEFAULT_HUGO_VERSION (0.148.2)，也可在后台通过 HUGO_VERSION 覆盖。"

@@ -1,0 +1,12 @@
+{
+  // 方案 01：最简配置，直接使用 Cloudflare Workers Builds 预装的默认 hugo
+  "name": "hugo-workers-01-default",
+  "compatibility_date": "2026-10-01",
+  "build": {
+    "command": "hugo --gc --minify"
+  },
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  }
+}

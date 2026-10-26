@@ -1,0 +1,12 @@
+{
+  // 方案 02：代码与方案 01 相同，但需要在 Cloudflare 后台 Build variables 中配置 HUGO_VERSION
+  "name": "hugo-workers-02-dashboard-env",
+  "compatibility_date": "2026-10-01",
+  "build": {
+    "command": "hugo --gc --minify"
+  },
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  }
+}

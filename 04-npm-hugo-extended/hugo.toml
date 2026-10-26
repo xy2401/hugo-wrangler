@@ -1,0 +1,9 @@
+baseURL = "/"
+languageCode = "zh-CN"
+title = "方案 04：通过 package.json (hugo-extended) 锁定版本"
+disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
+
+[params]
+  caseId = "Case 04 · npm hugo-extended (Recommended IaC)"
+  description = "通过 npm 的 hugo-extended 包将 Hugo 版本直接声明在 package.json 中，彻底摆脱对 Cloudflare 默认构建镜像和后台环境变量的依赖。"
+  expectedBehavior = "Hugo 版本严格等于 package.json 中 devDependencies.hugo-extended 指定的版本 (0.148.2)，且必为 Extended 版。"

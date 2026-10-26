@@ -1,0 +1,9 @@
+baseURL = "/"
+languageCode = "zh-CN"
+title = "方案 01：默认 Hugo 环境 (Default Hugo)"
+disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
+
+[params]
+  caseId = "Case 01 · Default Build Image"
+  description = "不配置任何 HUGO_VERSION 环境变量或额外依赖，直接测试 Cloudflare Workers Builds 容器内置的默认 Hugo 版本。"
+  expectedBehavior = "使用 Cloudflare 构建镜像预装的默认 Hugo 版本（如 0.147.x 等随镜像更新的版本）"
